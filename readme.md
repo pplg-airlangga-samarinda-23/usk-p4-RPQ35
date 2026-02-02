@@ -33,5 +33,5 @@
 
 2. **Clone Repositori**
    ```bash
-   git clone [usk-p4-RPQ35](https://github.com/pplg-airlangga-samarinda-23/usk-p4-RPQ35.git)
+   git clone https://github.com/pplg-airlangga-samarinda-23/usk-p4-RPQ35.git
 
