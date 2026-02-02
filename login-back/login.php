@@ -10,7 +10,7 @@
     $verify->execute([$username]);
     $verify = $verify->fetch(PDO::FETCH_ASSOC);
     if ($verify && password_verify($password, $verify['password'])) {
-        $_SESSION['usename'] = $verify['username'];
+        $_SESSION['username'] = $verify['username'];
         $_SESSION['login'] = true;
         $_SESSION['role'] = $verify['role'];
         $_SESSION['success'] = 'Login berhasil sebagai' . $verify['role'];

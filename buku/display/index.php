@@ -8,13 +8,14 @@ startsect ?>
         <section
             class="w-[900px] outline outline-offset-2 p-4 rounded-lg mx-auto bg-white"
             x-data="bookTable">
-            <div class="w-full mb-4">
+            <div class="w-full flex flex-row justify-between mb-4">
                 <input
                     type="text"
                     x-model="search"
                     @input="currentPage = 1"
                     placeholder="Serach by Judul or Pengarang"
-                    class="w-full p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-sky-300">
+                    class="w-98 p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-sky-300">
+                <button class="rounded-xl w-18 h-10 bg-sky-500 outline-3 outline-slate-300 hover:outline-offset-2 hover:bg-sky-700 active:text-white ">Create</button>
             </div>
 
             <table class="table-auto border-collapse w-full">
@@ -28,7 +29,7 @@ startsect ?>
                     </tr>
                 </thead>
                 <tbody>
-                    <template x-for="(book, index) in paginatedBooks" >
+                    <template x-for="(book, index) in paginatedBooks">
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="text-center p-2 border-r" x-text="((currentPage - 1) * pageSize) + index + 1"></td>
                             <td class="p-2" x-text="book.judul"></td>
@@ -36,8 +37,8 @@ startsect ?>
                             <td class="p-2" x-text="book.deskripsi"></td>
                             <td class="p-2 text-center">
                                 <div class="flex gap-2 justify-center">
-                                    <button @click="modal=true,editform={...book}"  class="bg-yellow-400 px-3 py-1 rounded-xl text-sm">edit</button>
-                                    <form action="<?= $curent_url ?>delete.php" method="POST"><input type="hidden" name="Id" x-model="book.id"> <button   class="bg-red-500 px-3 py-1 rounded-xl text-sm text-white">delete</button></form>
+                                    <button @click="modal=true,editform={...book}" class="bg-yellow-400 px-3 py-1 rounded-xl text-sm">edit</button>
+                                    <form action="<?= $curent_url ?>delete.php" method="POST"><input type="hidden" name="Id" x-model="book.id"> <button class="bg-red-500 px-3 py-1 rounded-xl text-sm text-white">delete</button></form>
                                 </div>
                             </td>
                         </tr>
@@ -86,7 +87,7 @@ startsect ?>
     </div>
     <section x-show="modal" class="bg-stone-500/30 w-full h-full fixed top-0 flex flex-row justify-center items-center ">
         <div class="bg-sky-400/98 w-98 h-98 outline-2 outline-offset-4 outline-slate-500 rounded-xl">
-            <form action="   class="w-full h-full relative p-3 " method="post">
+            <form action='<?= $curent_url ?>update.php' class="w-full h-full relative p-3 " method="post">
                 <label class="w-full flex flex-row justify-center items-center">
                     <span class="text-xl font-bold ">Edit data</span>
                 </label>

@@ -1,5 +1,5 @@
 <?php
-$tujuan = trim($_SERVER['REQUEST_URI'], 'delete.php');
+$tujuan = trim($_SERVER['REQUEST_URI'], 'update.php');
 
 require_once(dirname(__DIR__, 1) . '../database/db-con.php');
 

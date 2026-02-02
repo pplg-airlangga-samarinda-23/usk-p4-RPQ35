@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 define('startsect', ob_start());
 
 // var_dump($_SESSION);
