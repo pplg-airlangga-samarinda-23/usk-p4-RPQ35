@@ -11,11 +11,12 @@
     $verify = $verify->fetch(PDO::FETCH_ASSOC);
     if ($verify && password_verify($password, $verify['password'])) {
         $_SESSION['username'] = $verify['username'];
+        $_SESSION['user_id']=$verify['id'];
         $_SESSION['login'] = true;
         $_SESSION['role'] = $verify['role'];
         $_SESSION['success'] = 'Login berhasil sebagai' . $verify['role'];
         
-        header('Location:../dashboard_' . $verify['role'] . '.php');
+        header('Location:../dashboard/');
     } else {
         $_SESSION['success'] = 'Username atau Password salah';
         $_SESSION['login'] = false;

@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         } elseif (password_verify($password, $check['password'])) {
             $_SESSION['success'] = 'anda sudah memiliki akun ,Login berhasil sebagai ' . $check['role'];
             $_SESSION['role']=$verify['role'];
-            header('Location:../dashboar_' . $check['role'] . '.php');
+            $_SESSION['user_id']=$verify['id'];
+            header('Location:../dashboar');
         } else {
             getback();
         }

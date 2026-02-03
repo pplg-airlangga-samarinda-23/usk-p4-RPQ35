@@ -1,6 +1,6 @@
 <?php
 $curents = $_SERVER['REQUEST_URI'];
-
+$mboh=explode("/",$curents);
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +51,20 @@ $curents = $_SERVER['REQUEST_URI'];
             x-transition:leave-start="translate-x-0"
             x-transition:leave-end="-translate-x-full">
             <div class="p-4 text-white font-bold">Sidebar Menu</div>
-            <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../buku"> Book</a>
-            <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../user"> User</a>
+
+            <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../dashboard/"> Dashboard</a>
+
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../buku"> Book</a>
+                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../user"> User</a>
+                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../Transaction"> Transaction</a>
+            <?php endif ?>
+
+            <?php if ($_SESSION['role'] == 'anggota'): ?>
+                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../form/pinjam.php"> pinjam</a>
+                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../form/kembali.php"> kembali</a>
+                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../history"> History</a>
+            <?php endif ?>
         </aside>
 
         <?php echo $content ?>
