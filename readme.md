@@ -1,6 +1,6 @@
 # 🚀Perpustakan
 
->Aplikasi berbasis web yang berguna sebagai aplikasi Perpustakaan yang digunakan untuk membantu mengatur buku dan stok 
+>Aplikasi berbasis web yang berguna sebagai aplikasi **Perpustakaan** yang digunakan untuk membantu mengatur buku dan stok 
 
 ---
 

@@ -15,7 +15,7 @@ startsect ?>
                     @input="currentPage = 1"
                     placeholder="Serach by Judul or Pengarang"
                     class="w-98 p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-sky-300">
-                <button class="rounded-xl w-18 h-10 bg-sky-500 outline-3 outline-slate-300 hover:outline-offset-2 hover:bg-sky-700 active:text-white ">Create</button>
+                <a href="<?= $curent_url.'create.php' ?>"><button class="rounded-xl w-18 h-10 bg-sky-500 outline-3 outline-slate-300 hover:outline-offset-2 hover:bg-sky-700 active:text-white ">Create</button></a>
             </div>
 
             <table class="table-auto border-collapse w-full">
@@ -25,6 +25,7 @@ startsect ?>
                         <th class="bg-sky-300 p-2 text-center">judul</th>
                         <th class="bg-sky-300 p-2 text-center">pengarang</th>
                         <th class="bg-sky-300 p-2 text-center">deskripsi</th>
+                        <th class="bg-sky-300 p-2 text-center">stok</th>
                         <th class="bg-sky-300 p-2 text-center rounded-tr-lg">action</th>
                     </tr>
                 </thead>
@@ -35,6 +36,7 @@ startsect ?>
                             <td class="p-2" x-text="book.judul"></td>
                             <td class="p-2" x-text="book.pengarang"></td>
                             <td class="p-2" x-text="book.deskripsi"></td>
+                            <td class="p-2" x-text="book.stok"></td>
                             <td class="p-2 text-center">
                                 <div class="flex gap-2 justify-center">
                                     <button @click="modal=true,editform={...book}" class="bg-yellow-400 px-3 py-1 rounded-xl text-sm">edit</button>
@@ -109,7 +111,12 @@ startsect ?>
                     <textarea type="text" name="deskripsi" id="deskripsi" x-model="editform.deskripsi" class="pl-2 border rounded-xl h-20 bg-white font-semibold font-mono"></textarea>
                 </label>
 
-                <div class="gap-5 flex flex-row absolute bottom-0">
+                <label for="stok" class="flex flex-col">
+                    <span class="text-lg font-semibold font-serif">stok</span>
+                    <input type="text" name="stok" id="stok" x-model="editform.stok" class="pl-2 border rounded-full h-10 font-semibold font-mono bg-white">
+                </label>
+
+                <div class="gap-5 flex flex-row absolute bottom-0 mt-2">
                     <button type="submit" class="bg-green-500 hover:bg-green-700 outline-slate-500 outline-2 hover:outline-offset-2  rounded-full w-24 h-10 text-center">Add</button>
                     <button type="reset" @click="modal=!modal" class="bg-red-500 hover:bg-red-700 outline-slate-500 outline-2 hover:outline-offset-2 rounded-full w-24 h-10 text-center">cancel</button>
                 </div>

@@ -15,7 +15,7 @@
         $_SESSION['role'] = $verify['role'];
         $_SESSION['success'] = 'Login berhasil sebagai' . $verify['role'];
         
-        header('Location:../dashboar_' . $verify['role'] . '.php');
+        header('Location:../dashboard_' . $verify['role'] . '.php');
     } else {
         $_SESSION['success'] = 'Username atau Password salah';
         $_SESSION['login'] = false;
