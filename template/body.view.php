@@ -57,7 +57,7 @@ $mboh=explode("/",$curents);
             <?php if ($_SESSION['role'] == 'admin'): ?>
                 <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../buku"> Book</a>
                 <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../user"> User</a>
-                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../Transaction"> Transaction</a>
+                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../transaction"> Transaction</a>
             <?php endif ?>
 
             <?php if ($_SESSION['role'] == 'anggota'): ?>

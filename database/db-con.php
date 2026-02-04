@@ -31,7 +31,7 @@ loadEnv(__DIR__.'/.env');
 // var_dump($_ENV);
 
 
-$connect = new Pdo('mysql:host=localhost;dbname=perpustakaan', "$_ENV[DB_USERNAME]", "$_ENV[DB_PASSWORD]");
+$connect = new Pdo("mysql:host=localhost;dbname=$_ENV[DB_NAME]", "$_ENV[DB_USERNAME]", "$_ENV[DB_PASSWORD]");
 
 try {
     $connect->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE);

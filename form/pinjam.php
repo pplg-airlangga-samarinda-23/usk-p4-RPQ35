@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__DIR__, 1) . '../database/db-con.php');
+require_once(dirname(__DIR__, 1) . '/database/db-con.php');
 
 
 $data = db_con->prepare("SELECT * FROM `book`");

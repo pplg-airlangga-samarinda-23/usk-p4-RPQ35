@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__DIR__, 1) . '../database/db-con.php');
+require_once(dirname(__DIR__, 1) . '/database/db-con.php');
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // 1. Ambil data dari POST/SESSION
