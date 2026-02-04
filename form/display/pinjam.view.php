@@ -1,4 +1,4 @@
-<?php include_once(dirname(__DIR__, 2) . '../config.php');
+<?php include_once(dirname(__DIR__, 2) . '/config.php');
 startsect ?>
 
 
@@ -12,7 +12,7 @@ startsect ?>
                     editform: { judul: "", pengarang: "" },
                     showJudulList: false,
                     /* Data ini biasanya didapat dari PHP fetchAll */
-                    books: <?=(json_encode($data))?>,
+                    books: <?= (json_encode($data)) ?>,
                     
                     get filteredBooks() {
                         if (this.editform.judul === "") return [];
@@ -64,7 +64,7 @@ startsect ?>
                             placeholder="Otomatis terisi...">
                     </label>
 
-                    <input type="hidden" name="book_id"  x-model="editform.id">
+                    <input type="hidden" name="book_id" x-model="editform.id">
                 </div>
 
                 <label for="Tanggal_kembali" class="flex flex-col mt-10">
@@ -74,7 +74,7 @@ startsect ?>
 
                 <div class="gap-5 flex flex-row mt-12">
                     <button type="submit" class="bg-green-500 hover:bg-green-700 outline-slate-500 outline-2 hover:outline-offset-2  rounded-full w-24 h-10 text-center">Add</button>
-                    <button type="reset"  class="bg-red-500 hover:bg-red-700 outline-slate-500 outline-2 hover:outline-offset-2 rounded-full w-24 h-10 text-center">cancel</button>
+                    <button type="reset" class="bg-red-500 hover:bg-red-700 outline-slate-500 outline-2 hover:outline-offset-2 rounded-full w-24 h-10 text-center">cancel</button>
                 </div>
             </form>
         </section>

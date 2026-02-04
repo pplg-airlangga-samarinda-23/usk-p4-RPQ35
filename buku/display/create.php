@@ -1,4 +1,4 @@
-<?php include_once(dirname(__DIR__, 2) . '../config.php');
+<?php include_once(dirname(__DIR__, 2) . '/config.php');
 startsect ?>
 
 
@@ -8,7 +8,7 @@ startsect ?>
         <div class="w-full h-6 text-xl">Create</div>
         <section class="w-full h-full">
             <form action="" method="POST" class="w-3/5 mt-10">
-            <label for="Judul" class="flex flex-col">
+                <label for="Judul" class="flex flex-col">
                     <span class="text-lg font-semibold font-serif">Judul</span>
                     <input type="text" name="Judul" id="Judul" x-model="editform.judul" class="pl-2 border rounded-full h-10 font-semibold font-mono bg-white">
                 </label>

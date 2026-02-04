@@ -1,4 +1,4 @@
-<?php include_once(dirname(__DIR__, 2) . '../config.php');
+<?php include_once(dirname(__DIR__, 2) . '/config.php');
 startsect ?>
 
 
@@ -39,7 +39,7 @@ startsect ?>
                             <td class="p-2" x-text="book.denda"></td>
                             <td class="p-2 text-center">
                                 <div class="flex gap-2 justify-center">
-                                    <form action="<?= trim($curent_url,'kembali.php') ?>iyah.php" method="POST">
+                                    <form action="<?= trim($curent_url, 'kembali.php') ?>iyah.php" method="POST">
                                         <input type="hidden" name="id_peminjaman" x-model="book.id_peminjaman">
                                         <input type="text" hidden name="id_buku" x-model="book.id_buku">
                                         <button class="bg-red-500 px-3 py-1 rounded-xl text-sm text-white">Kembalikan</button>

@@ -1,4 +1,4 @@
-<?php include_once(dirname(__DIR__, 2) . '../config.php');
+<?php include_once(dirname(__DIR__, 2) . '/config.php');
 startsect ?>
 
 
@@ -15,7 +15,7 @@ startsect ?>
                     @input="currentPage = 1"
                     placeholder="Serach by Username or Role"
                     class="w-98 p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-sky-300">
-                <a href="<?= $curent_url ."create.php" ?>"> <button class="rounded-xl w-18 h-10 bg-sky-500 outline-3 outline-slate-300 hover:outline-offset-2 hover:bg-sky-700 active:text-white ">Create</button></a>
+                <a href="<?= $curent_url . "create.php" ?>"> <button class="rounded-xl w-18 h-10 bg-sky-500 outline-3 outline-slate-300 hover:outline-offset-2 hover:bg-sky-700 active:text-white ">Create</button></a>
             </div>
 
             <table class="table-auto border-collapse w-full">

@@ -1,4 +1,4 @@
-<?php include_once(dirname(__DIR__, 2) . '../config.php');
+<?php include_once(dirname(__DIR__, 2) . '/config.php');
 startsect ?>
 
 
