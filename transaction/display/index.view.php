@@ -13,9 +13,9 @@ startsect ?>
                     type="text"
                     x-model="search"
                     @input="currentPage = 1"
-                    placeholder="Serach by Username or Role"
+                    placeholder="Search and sort...."
                     class="w-98 p-2 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-sky-300">
-                <!-- <a href="<?= $curent_url ."create.php" ?>"> <button class="rounded-xl w-18 h-10 bg-sky-500 outline-3 outline-slate-300 hover:outline-offset-2 hover:bg-sky-700 active:text-white ">Create</button></a> -->
+                <!-- <a href="<?= $curent_url . "create.php" ?>"> <button class="rounded-xl w-18 h-10 bg-sky-500 outline-3 outline-slate-300 hover:outline-offset-2 hover:bg-sky-700 active:text-white ">Create</button></a> -->
             </div>
 
             <table class="table-auto border-collapse w-full">
@@ -23,7 +23,11 @@ startsect ?>
                     <tr>
                         <th class="bg-sky-300 p-2 text-center rounded-tl-lg w-[50px]">id</th>
                         <th class="bg-sky-300 p-2 text-center">Username</th>
-                        <th class="bg-sky-300 p-2 text-center">role</th>
+                        <th class="bg-sky-300 p-2 text-center">buku</th>
+                        <th class="bg-sky-300 p-2 text-center">tanggal dipinjam</th>
+                        <th class="bg-sky-300 p-2 text-center">tanggal kembali</th>
+                        <th class="bg-sky-300 p-2 text-center">status</th>
+                        <th class="bg-sky-300 p-2 text-center">denda</th>
                         <th class="bg-sky-300 p-2 text-center rounded-tr-lg">action</th>
                     </tr>
                 </thead>
@@ -31,12 +35,15 @@ startsect ?>
                     <template x-for="(book, index) in paginatedBooks">
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="text-center p-2 border-r" x-text="((currentPage - 1) * pageSize) + index + 1"></td>
-                            <td class="p-2" x-text="book.username"></td>
-                            <td class="p-2" x-text="book.role"></td>
+                            <td class="p-2" x-text="book.username_peminjam"></td>
+                            <td class="p-2" x-text="book.judul_buku"></td>
+                            <td class="p-2" x-text="book.tgl_pinjam"></td>
+                            <td class="p-2" x-text="book.tgl_kembali"></td>
+                            <td class="p-2" x-text="book.status"></td>
+                            <td class="p-2" x-text="book.denda"></td>
                             <td class="p-2 text-center">
                                 <div class="flex gap-2 justify-center">
                                     <button @click="modal=true,editform={...book}" class="bg-yellow-400 px-3 py-1 rounded-xl text-sm">edit</button>
-                                    <form action="<?= $curent_url ?>delete.php" method="POST"><input type="hidden" name="Id" x-model="book.id"> <button class="bg-red-500 px-3 py-1 rounded-xl text-sm text-white">delete</button></form>
                                 </div>
                             </td>
                         </tr>
@@ -64,8 +71,12 @@ startsect ?>
                     get filteredBooks() {
                         if (!this.search) return this.allBooks;
                         return this.allBooks.filter(book =>
-                            book.username.toLowerCase().includes(this.search.toLowerCase()) ||
-                            book.role.toLowerCase().includes(this.search.toLowerCase())
+                            book.username_peminjam.toLowerCase().includes(this.search.toLowerCase()) ||
+                            book.judul_buku.toLowerCase().includes(this.search.toLowerCase()) ||
+                            book.tgl_pinjam.toLowerCase().includes(this.search.toLowerCase()) ||
+                            book.tgl_kembali.toLowerCase().includes(this.search.toLowerCase()) ||
+                            book.status.toLowerCase().includes(this.search.toLowerCase()) ||
+                            book.denda.toLowerCase().includes(this.search.toLowerCase())
                         );
                     },
 
@@ -90,24 +101,14 @@ startsect ?>
                     <span class="text-xl font-bold ">Edit data</span>
                 </label>
 
-                <input type="hidden" name="Id" x-model="editform.id">
+                <input type="hidden" name="ids" x-model="editform.id">
 
-                <label for="username" class="flex flex-col">
-                    <span class="text-lg font-semibold font-serif">username</span>
-                    <input type="text" name="username" id="username" x-model="editform.username" class="pl-2 border rounded-full h-10 font-semibold font-mono bg-white">
+                <label for="denda" class="flex flex-col">
+                    <span class="text-lg font-semibold font-serif">denda</span>
+                    <input type="number" name="denda" id="denda" x-model="editform.denda" class="pl-2 border rounded-full h-10 font-semibold font-mono bg-white">
                 </label>
 
-                <label for="password" class="flex flex-col">
-                    <span class="text-lg font-semibold font-serif">password</span>
-                    <input type="text" name="password" id="password" class="pl-2 border rounded-full h-10 font-semibold font-mono bg-white">
-                </label>
-                <label for="role" class="flex flex-col">
-                    <span class="text-lg font-semibold font-serif">role</span>
-                    <select name="role" id="role" x-model="editform.role" class="pl-2 border rounded-full h-10 font-semibold font-mono bg-white">
-                        <option value="admin">admin</option>
-                        <option value="anggota">anggota</option>
-                    </select>
-                </label>
+
 
                 <div class="gap-5 flex flex-row absolute bottom-0 mt-2">
                     <button type="submit" class="bg-green-500 hover:bg-green-700 outline-slate-500 outline-2 hover:outline-offset-2  rounded-full w-24 h-10 text-center">Add</button>
