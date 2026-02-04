@@ -15,11 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if ($password == $confirmPass) {
 
-        $check = db_con->prepare('SELECT * FROM `user` WHERE `username`=? LIMIT 1');
+        $check = $db_con->prepare('SELECT * FROM `user` WHERE `username`=? LIMIT 1');
         $check->execute([$username]);
         $check = $check->fetch(PDO::FETCH_ASSOC);
         if (!$check) {
-            $create = db_con->prepare('INSERT INTO `user` VALUE(null,:username,:passwords,:roles)');
+            $create = $db_con->prepare('INSERT INTO `user` VALUE(null,:username,:passwords,:roles)');
             $create->execute([
                 'username' => $username,
                 'passwords' => password_hash($password, PASSWORD_DEFAULT),
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($create) {
                 $_SESSION['username'] = $username;
                 $_SESSION['login'] = true;
-                $_SESSION['role']='anggota';
+                $_SESSION['role'] = 'anggota';
                 $_SESSION['success'] = 'Login berhasil sebagai anggota';
                 echo ('y');
                 header('Location:../dashboar_anggota.php');
@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         } elseif (password_verify($password, $check['password'])) {
             $_SESSION['success'] = 'anda sudah memiliki akun ,Login berhasil sebagai ' . $check['role'];
-            $_SESSION['role']=$verify['role'];
-            $_SESSION['user_id']=$verify['id'];
+            $_SESSION['role'] = $verify['role'];
+            $_SESSION['user_id'] = $verify['id'];
             header('Location:../dashboar');
         } else {
             getback();

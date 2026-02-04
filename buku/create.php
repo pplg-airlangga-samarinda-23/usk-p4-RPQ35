@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Judul']) && isset($_PO
     $Deskripsi = $_POST['deskripsi'];
     $stok = $_POST['stok'];
 
-    $check = db_con->prepare("SELECT * FROM `book` WHERE `judul`=:judul AND `pengarang`=:pengarang ");
+    $check = $db_con->prepare("SELECT * FROM `book` WHERE `judul`=:judul AND `pengarang`=:pengarang ");
     $check->execute([
         'judul' => $Judul,
         'pengarang' => $Pengarang,
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Judul']) && isset($_PO
         // echo"C";
         // exit;
     } else {
-        $create = db_con->prepare("INSERT INTO `book`(`judul`,`pengarang`,`deskripsi`,`stok`)  Value(?,?,?,?)");
+        $create = $db_con->prepare("INSERT INTO `book`(`judul`,`pengarang`,`deskripsi`,`stok`)  Value(?,?,?,?)");
         $hasil = $create->execute([
             $Judul,
             $Pengarang,

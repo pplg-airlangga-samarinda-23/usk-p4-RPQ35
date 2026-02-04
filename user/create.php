@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $role = $_POST['Role'];
 
 
-    $create = db_con->prepare("INSERT INTO `user`(`username`,`password`,`role`)  Value(?,?,?)");
+    $create = $db_con->prepare("INSERT INTO `user`(`username`,`password`,`role`)  Value(?,?,?)");
     $create->execute([
         $username,
         $password,

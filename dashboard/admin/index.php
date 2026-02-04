@@ -1,14 +1,14 @@
-<?php include_once(dirname(__DIR__ ,2). '/config.php');
+<?php include_once(dirname(__DIR__, 2) . '/config.php');
 startsect ?>
 
 
 <?php
-include_once(dirname(__DIR__ ,2). '/database/db-con.php');
+include_once(dirname(__DIR__, 2) . '/database/db-con.php');
 
-$user = db_con->prepare("SELECT COUNT(*) FROM `user`");
+$user = $db_con->prepare("SELECT COUNT(*) FROM `user`");
 $user->execute();
 $user = $user->fetch(PDO::FETCH_ASSOC);
-$book = db_con->prepare("SELECT COUNT(*) FROM `book`");
+$book = $db_con->prepare("SELECT COUNT(*) FROM `book`");
 $book->execute();
 $book = $book->fetch(PDO::FETCH_ASSOC);
 ?>

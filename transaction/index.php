@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__DIR__, 1) . '/database/db-con.php');
 
-$data = db_con->prepare("SELECT 
+$data = $db_con->prepare("SELECT 
                 dp.id,
                 p.id_peminjaman,
                 u.username AS username_peminjam,
