@@ -35,7 +35,7 @@ $connect = new Pdo("mysql:host=localhost;dbname=$_ENV[DB_NAME]", "$_ENV[DB_USERN
 
 try {
     $connect->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ATTR_ERRMODE);
-    define('$db_con', $connect);
+    $db_con= $connect
 } catch (PDOException $e) {
     echo $e;
 }
