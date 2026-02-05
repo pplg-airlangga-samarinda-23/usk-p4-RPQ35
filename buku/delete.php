@@ -8,11 +8,11 @@ if (isset($_POST['Id'])) {
 
     $del = $db_con->prepare("DELETE FROM `book` WHERE `id`=:ids");
     $del = $del->execute(['ids' => intval(trim($_POST['Id']))]);
-    var_dump($del);
+    // var_dump($del);
 
     $_SESSION['success'] = 'berhasil menghapus';
 } else {
     $_SESSION['success'] = 'gagal menghapus';
 }
 
-header("Location:$tujuan" );
+header("Location:" . $tujuan);
