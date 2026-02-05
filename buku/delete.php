@@ -15,4 +15,4 @@ if (isset($_POST['Id'])) {
     $_SESSION['success'] = 'gagal menghapus';
 }
 
-header('Location:' . $tujuan);
+header("Location:$tujuan" );
