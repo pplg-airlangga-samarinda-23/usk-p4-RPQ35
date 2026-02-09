@@ -25,14 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 'passwords' => password_hash($password, PASSWORD_DEFAULT),
                 'roles' => 'anggota',
             ]);
-            echo ('y');
+            // echo ('y');
             if ($create) {
                 $_SESSION['username'] = $username;
                 $_SESSION['login'] = true;
                 $_SESSION['role'] = 'anggota';
                 $_SESSION['success'] = 'Login berhasil sebagai anggota';
-                echo ('y');
-                header('Location:../dashboar_anggota.php');
+                // echo ('y');
+                header('Location:../dashboard/');
             } else {
                 getback();
             }
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $_SESSION['success'] = 'anda sudah memiliki akun ,Login berhasil sebagai ' . $check['role'];
             $_SESSION['role'] = $verify['role'];
             $_SESSION['user_id'] = $verify['id'];
-            header('Location:../dashboar');
+            header('Location:../dashboard/');
         } else {
             getback();
         }
@@ -48,4 +48,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         getback();
     }
 }
-header('Location:../login.php');
+// header('Location:../login.php');
