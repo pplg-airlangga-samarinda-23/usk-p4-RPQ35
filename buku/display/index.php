@@ -2,7 +2,7 @@
 startsect ?>
 
 
-<section class="flex-1 w-full pl-8 " x-data="{editform:'',modal:false}">
+<section class="flex-1 w-full  sm:pl-8 " x-data="{editform:'',modal:false}">
     <div class="w-full h-12">book</div>
     <div class="w-full h-full bg-white pt-10 pl-5">
         <section

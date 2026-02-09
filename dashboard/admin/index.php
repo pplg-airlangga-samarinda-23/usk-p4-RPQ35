@@ -13,7 +13,7 @@ $book->execute();
 $book = $book->fetch(PDO::FETCH_ASSOC);
 ?>
 
-<section class="flex-1 w-full pl-8 " x-data="{editform:'',modal:false}">
+<section class="flex-1 w-full  sm:pl-8 " x-data="{editform:'',modal:false}">
     <div class="w-full h-12 text-2xl">Dashboard</div>
     <div class="w-full h-full bg-white pt-10 pl-5 font-sans flex flex-1 gap-5">
 
