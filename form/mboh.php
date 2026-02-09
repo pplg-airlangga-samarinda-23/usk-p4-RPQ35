@@ -47,14 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         ]);
 
         $db_con->commit();
-        $_SESSION['success']= "Peminjaman berhasil dan stok telah diperbarui!";
+        $_SESSION['success'] = "Peminjaman berhasil dan stok telah diperbarui!";
     } catch (Exception $e) {
         $db_con->rollBack();
-        $_SESSION['success']= "Gagal: " . $e->getMessage();
+        $_SESSION['success'] = "Gagal: " . $e->getMessage();
     }
-}
-else{
-    $_SESSION['success']= "Gagal: " . $e->getMessage();
+} else {
+    $_SESSION['success'] = "Gagal: " . $e->getMessage();
 }
 
-header(trim($_SERVER['REQUEST_URI'],'mboh.php').'pinjam.php');
+header('Location:'.trim($_SERVER['REQUEST_URI'], 'mboh.php') . 'pinjam.php');
