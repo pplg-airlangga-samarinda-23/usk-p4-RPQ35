@@ -33,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         ]);
 
         $db_con->commit();
-        echo "Buku berhasil dikembalikan!";
+        $_SESSION['success'] = "Buku berhasil dikembalikan!";
     } catch (Exception $e) {
         $db_con->rollBack();
-        echo "Gagal mengembalikan buku: " . $e->getMessage();
+        $_SESSION['success'] = "Gagal mengembalikan buku: " . $e->getMessage();
     }
 }
 
