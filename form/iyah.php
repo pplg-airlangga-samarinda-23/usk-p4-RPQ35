@@ -2,7 +2,6 @@
 
 require_once(dirname(__DIR__, 1) . '/database/db-con.php');
 
-var_dump($_POST);
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
