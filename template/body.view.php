@@ -63,7 +63,7 @@ $mboh=explode("/",$curents);
             <?php if ($_SESSION['role'] == 'anggota'): ?>
                 <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../form/pinjam.php"> pinjam</a>
                 <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../form/kembali.php"> kembali</a>
-                <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../history"> History</a>
+                <!-- <a class="w-full h-12 hover:bg-sky-500  border-y-2 border-black" href="../history"> History</a> -->
             <?php endif ?>
         </aside>
 
