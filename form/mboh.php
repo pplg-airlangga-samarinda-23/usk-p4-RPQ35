@@ -53,3 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo "Gagal: " . $e->getMessage();
     }
 }
+else{
+    echo "Gagal: " . $e->getMessage();
+}
+
+header(trim($_SERVER['REQUEST_URI'],'mboh.php').'pinjam.php');
