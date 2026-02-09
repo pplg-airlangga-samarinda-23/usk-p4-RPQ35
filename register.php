@@ -2,7 +2,7 @@
 startsect ?>
 <div class="w-full h-screen flex flex-row justify-center items-center">
     <section class="w-[450px] h-[500px] bg-sky-500/60 rounded-2xl ">
-        <form action="<?= trim($_SERVER['REQUEST_URI'],'register.php') ?>/login-back/register.php" method="post" class="flex flex-col items-center h-full w-full gap-5 ">
+        <form action="<?= trim($_SERVER['REQUEST_URI'],'/register.php') ?>/login-back/register.php" method="post" class="flex flex-col items-center h-full w-full gap-5 ">
             <label class="h-18 w-full text-3xl flex flex-col justify-center font-bold gont-sans justify-center items-center ">Login</label>
 
             <label for="Username" class="w-[95%] mx-auto">
